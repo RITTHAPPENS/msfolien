@@ -88,10 +88,6 @@
 
     <!-- Hero -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-stripes" aria-hidden="true">
-        <span class="stripe stripe-teal"></span>
-        <span class="stripe stripe-light"></span>
-      </div>
       <div class="shell hero-grid">
         <div class="hero-copy">
           <h1 id="hero-title" class="hero-title">Werbung,<br>die bewegt.</h1>
@@ -107,15 +103,18 @@
             </a>
           </div>
         </div>
-        <figure class="hero-media wipe" data-wipe>
-          <img
-            src="assets/img/ms-firmenfahrzeug-1200.webp"
-            srcset="assets/img/ms-firmenfahrzeug-1200.webp 1200w, assets/img/ms-firmenfahrzeug-2400.webp 2400w"
-            sizes="(min-width: 960px) 62vw, 100vw"
-            width="2400" height="1254"
-            alt="Firmenfahrzeug von MS-Folientechnik mit schwarz-weißer Diagonalfolierung und türkisem Logo vor der Halle in Simmerath"
-            fetchpriority="high">
-        </figure>
+        <div class="slant-wrap">
+          <span class="slant-stripe" aria-hidden="true"></span>
+          <figure class="hero-media slant wipe" data-wipe>
+            <img
+              src="assets/img/ms-firmenfahrzeug-1200.webp"
+              srcset="assets/img/ms-firmenfahrzeug-1200.webp 1200w, assets/img/ms-firmenfahrzeug-2400.webp 2400w"
+              sizes="(min-width: 960px) 62vw, 100vw"
+              width="2400" height="1254"
+              alt="Firmenfahrzeug von MS-Folientechnik mit schwarz-weißer Diagonalfolierung und türkisem Logo vor der Halle in Simmerath"
+              fetchpriority="high">
+          </figure>
+        </div>
       </div>
     </section>
 
