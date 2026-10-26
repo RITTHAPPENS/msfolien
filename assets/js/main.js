@@ -66,6 +66,53 @@
     update();
   }
 
+  // Kontaktformular: Validierung (Prototyp, Versand übernimmt später das Elementor-Formular)
+  const form = document.querySelector('[data-form]');
+  if (form) {
+    const rules = [
+      ['f-name', (f) => f.elements.name.value.trim().length > 1],
+      ['f-mail', (f) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.value.trim())],
+      ['f-phone', (f) => f.telefon.value.replace(/[^0-9]/g, '').length >= 6],
+      ['f-art', (f) => !!f.querySelector('input[name="art"]:checked')],
+      ['f-msg', (f) => f.nachricht.value.trim().length > 4],
+      ['f-dsgvo', (f) => f.datenschutz.checked],
+    ];
+    const check = (id) => {
+      const [, test] = rules.find(([r]) => r === id);
+      const ok = test(form);
+      const err = document.getElementById(id + '-err');
+      const input = document.getElementById(id);
+      if (err) err.hidden = ok;
+      if (input) {
+        input.setAttribute('aria-invalid', String(!ok));
+        if (err) input.setAttribute('aria-describedby', err.id);
+      }
+      return ok;
+    };
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const results = rules.map(([id]) => check(id));
+      const firstBad = rules[results.indexOf(false)];
+      if (firstBad) {
+        const el = document.getElementById(firstBad[0]) || form.querySelector(firstBad[0] === 'f-art' ? 'input[name="art"]' : 'input[name="datenschutz"]');
+        if (el) el.focus();
+        return;
+      }
+      form.querySelector('[data-form-success]').hidden = false;
+      form.querySelector('.form-grid').hidden = true;
+      form.querySelector('.form-submit').hidden = true;
+      form.querySelector('[data-form-success]').focus?.();
+    });
+    // Fehler verschwinden schon beim Tippen, damit sich das Layout nicht erst beim nächsten Klick verschiebt
+    const revalidate = (e) => {
+      const id = e.target.name === 'art' ? 'f-art' : e.target.name === 'datenschutz' ? 'f-dsgvo' : e.target.id;
+      if (rules.some(([r]) => r === id) && form.dataset.touched) check(id);
+    };
+    form.addEventListener('input', revalidate);
+    form.addEventListener('change', revalidate);
+    form.addEventListener('submit', () => { form.dataset.touched = '1'; }, { capture: true });
+  }
+
   const year = document.querySelector('[data-year]');
   if (year) year.textContent = new Date().getFullYear();
 })();

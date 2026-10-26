@@ -39,3 +39,10 @@ Icons: Phosphor Regular als Sprite (assets/img/icons.svg).
 
 ## Unterseiten
 Page-Hero (Titel links vertikal mittig, Bild rechts mit Diagonalschnitt, kein Vollbild), Gruppen mit `group-head` (H2 + Intro gestapelt), `feature`-Karten mit Bild und Tags, `mini`-Einträge (Text mit Trennlinie) für Leistungen ohne Foto, `design-bento` mit einer türkisen Text-Kachel. Aktiver Menüpunkt: türkise Unterkante.
+
+## Über uns & Kontakt
+- Bildplatzhalter (`.ph`): gestreift + gestrichelt, mit Beschreibung, welches Foto hinein soll. Text-Platzhalter (`.ph-text`) in eckigen Klammern mit gestrichelter Linie links. Vor Livegang ersetzen.
+- Mission/Vision: zwei Aussagen mit türkiser Oberlinie, kein Kartenrahmen.
+- Formular: Label über Feld, Fehler darunter (#ff9585), Validierung beim Absenden, danach live beim Tippen. Anfrage-Art als Auswahl-Kacheln (türkis = gewählt). Erfolgsmeldung ersetzt das Formular.
+- Karte: Platzhalter bis zur Einwilligung (CCM19), Link zu Google Maps.
+- Footer: Spalten Seiten, Kontakt, Öffnungszeiten, Rechtliches.
