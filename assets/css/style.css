@@ -39,7 +39,8 @@
   --cut: 36px;
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --header-h: 72px;
+  --topbar-h: 38px;
+  --header-h: 122px;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -159,8 +160,20 @@ p { text-wrap: pretty; }
   border-bottom-color: var(--line);
 }
 .header-sentinel { position: absolute; top: 0; height: 80px; width: 1px; pointer-events: none; }
-.header-inner { height: 100%; display: flex; align-items: center; gap: 32px; }
-.brand img { width: 150px; height: auto; }
+.topbar {
+  height: var(--topbar-h);
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--line);
+  font-size: .88rem; color: var(--muted);
+}
+.topbar-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.topbar-hours, .topbar-contact a { display: inline-flex; align-items: center; gap: 8px; }
+.topbar .ico { width: 1.1em; height: 1.1em; color: var(--teal-ink); }
+.topbar-contact { display: flex; gap: 28px; }
+.topbar-contact a { text-decoration: none; font-variant-numeric: tabular-nums; transition: color .2s; }
+.topbar-contact a:hover { color: var(--text); }
+.header-inner { height: calc(var(--header-h) - var(--topbar-h)); display: flex; align-items: center; gap: 32px; }
+.brand img { width: 220px; height: auto; }
 .nav { margin-left: auto; }
 .nav-list { display: flex; gap: 30px; }
 .nav-list a {
@@ -171,12 +184,6 @@ p { text-wrap: pretty; }
 .nav-list a:hover { color: var(--text); }
 .nav-mobile-only { display: none; }
 .header-actions { display: flex; align-items: center; gap: 20px; }
-.header-phone {
-  display: inline-flex; align-items: center; gap: 8px;
-  text-decoration: none; font-weight: 600; font-size: .95rem;
-  font-variant-numeric: tabular-nums;
-}
-.header-phone .ico { color: var(--teal-ink); }
 .nav-toggle {
   display: none; background: none; border: 1px solid var(--line-strong); color: var(--text);
   width: 44px; height: 44px; align-items: center; justify-content: center; cursor: pointer;
@@ -502,13 +509,14 @@ p { text-wrap: pretty; }
 
 /* Responsive */
 @media (max-width: 1180px) {
-  .header-phone { display: none; }
   .nav-list { gap: 22px; }
 }
 
 @media (max-width: 959px) {
-  :root { --header-h: 64px; --cut: 26px; }
-  .brand img { width: 128px; }
+  :root { --topbar-h: 34px; --header-h: 104px; --cut: 26px; }
+  .brand img { width: 168px; }
+  .topbar-contact .topbar-mail, .topbar-sat { display: none; }
+  .topbar { font-size: .82rem; }
   .nav-toggle { display: inline-flex; }
   .header-actions .btn-sm { display: none; }
   .nav {
