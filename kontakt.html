@@ -39,20 +39,34 @@
       <a class="brand" href="index.html" aria-label="MS-Folientechnik, zur Startseite">
         <img src="assets/img/ms-folientechnik-logo-480.png" width="480" height="126" alt="MS-Folientechnik">
       </a>
-      <nav class="nav" aria-label="Hauptnavigation">
-        <ul class="nav-list" id="nav-list">
-          <li><a href="leistungen.html">Leistungen</a></li>
-          <li><a href="ueber-uns.html">Über uns</a></li>
-          <li><a href="kontakt.html" aria-current="page">Kontakt</a></li>
-          <li class="nav-mobile-only"><a href="tel:+4924735849200">02473 5849200</a></li>
+      <nav class="nav" id="site-nav" aria-label="Hauptnavigation">
+        <ul class="nav-list">
+          <li style="--i:0"><a href="leistungen.html"><span>Leistungen</span><svg class="ico" aria-hidden="true"><use href="assets/img/icons.svg#i-arrow-right"/></svg></a></li>
+          <li style="--i:1"><a href="ueber-uns.html"><span>Über uns</span><svg class="ico" aria-hidden="true"><use href="assets/img/icons.svg#i-arrow-right"/></svg></a></li>
+          <li style="--i:2"><a href="kontakt.html" aria-current="page"><span>Kontakt</span><svg class="ico" aria-hidden="true"><use href="assets/img/icons.svg#i-arrow-right"/></svg></a></li>
         </ul>
+        <span class="nav-stripe" aria-hidden="true"></span>
+        <div class="nav-extra" style="--i:3">
+          <a class="btn btn-primary nav-cta" href="kontakt.html">
+            Anfrage stellen
+            <svg class="ico" aria-hidden="true"><use href="assets/img/icons.svg#i-arrow-right"/></svg>
+          </a>
+          <div class="nav-contact">
+            <a href="tel:+4924735849200"><svg class="ico" aria-hidden="true"><use href="assets/img/icons.svg#i-phone"/></svg>02473 5849200</a>
+            <a href="mailto:kontakt@ms-folientechnik.com"><svg class="ico" aria-hidden="true"><use href="assets/img/icons.svg#i-envelope-simple"/></svg>kontakt@ms-folientechnik.com</a>
+            <p><svg class="ico" aria-hidden="true"><use href="assets/img/icons.svg#i-clock"/></svg><span>Mo bis Fr, 8 bis 17 Uhr<br>Samstag nach Vereinbarung</span></p>
+          </div>
+          <div class="nav-social">
+            <a href="https://www.instagram.com/msfolientechnik/" target="_blank" rel="noopener" aria-label="MS-Folientechnik auf Instagram"><svg class="ico" aria-hidden="true"><use href="assets/img/icons.svg#i-instagram-logo"/></svg></a>
+            <a href="https://www.facebook.com/MSFolientechnik/" target="_blank" rel="noopener" aria-label="MS-Folientechnik auf Facebook"><svg class="ico" aria-hidden="true"><use href="assets/img/icons.svg#i-facebook-logo"/></svg></a>
+          </div>
+        </div>
       </nav>
       <div class="header-actions">
         <a class="btn btn-primary btn-sm" href="kontakt.html">Anfrage stellen</a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list" data-nav-toggle>
-          <svg class="ico ico-open" aria-hidden="true"><use href="assets/img/icons.svg#i-list"/></svg>
-          <svg class="ico ico-close" aria-hidden="true"><use href="assets/img/icons.svg#i-x"/></svg>
-          <span class="sr-only">Menü</span>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          <span class="burger" aria-hidden="true"><span></span><span></span></span>
+          <span class="nav-toggle-label" data-nav-label>Menü</span>
         </button>
       </div>
     </div>

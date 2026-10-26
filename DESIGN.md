@@ -46,3 +46,10 @@ Page-Hero (Titel links vertikal mittig, Bild rechts mit Diagonalschnitt, kein Vo
 - Formular: Label über Feld, Fehler darunter (#ff9585), Validierung beim Absenden, danach live beim Tippen. Anfrage-Art als Auswahl-Kacheln (türkis = gewählt). Erfolgsmeldung ersetzt das Formular.
 - Karte: Platzhalter bis zur Einwilligung (CCM19), Link zu Google Maps.
 - Footer: Spalten Seiten, Kontakt, Öffnungszeiten, Rechtliches.
+
+## Mobiles Menü
+- Burger rechtsbündig: zwei Balken (unterer kürzer) + Wort „Menü“, wird zu X + „Schließen“.
+- Vollflächiges Menü unter dem Header, wird mit schräger Unterkante von oben aufgezogen (clip-path), Links erscheinen gestaffelt.
+- Große Links (Archivo breit, ca. 2,4rem) mit Pfeil, aktive Seite in Türkis.
+- Unten: „Anfrage stellen“, Telefon, E-Mail, Öffnungszeiten, Social. Dazwischen das türkise Band im Hero-Winkel.
+- Seite dahinter ist gesperrt (Scroll-Lock, inert), Esc schließt, Fokus bleibt im Menü.

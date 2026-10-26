@@ -12,20 +12,40 @@
     header.classList.add('is-solid');
   }
 
-  // Mobile Navigation
+  // Mobile Navigation: Vollbild-Menü mit Fokusführung
   const toggle = document.querySelector('[data-nav-toggle]');
-  if (toggle) {
-    const close = () => {
-      root.classList.remove('nav-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    };
-    toggle.addEventListener('click', () => {
-      const open = root.classList.toggle('nav-open');
+  const nav = document.getElementById('site-nav');
+  if (toggle && nav) {
+    const label = toggle.querySelector('[data-nav-label]');
+    const outside = [document.querySelector('main'), document.querySelector('footer'), document.querySelector('.topbar')].filter(Boolean);
+    const mq = window.matchMedia('(max-width: 959px)');
+    const setOpen = (open, returnFocus) => {
+      root.classList.toggle('nav-open', open);
       toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      if (label) label.textContent = open ? 'Schließen' : 'Menü';
+      outside.forEach((el) => { el.inert = open; });
+      if (open) {
+        const first = nav.querySelector('.nav-list a');
+        if (first) setTimeout(() => first.focus({ preventScroll: true }), 80);
+      } else if (returnFocus) {
+        toggle.focus();
+      }
+    };
+    toggle.setAttribute('aria-label', 'Menü öffnen');
+    toggle.addEventListener('click', () => setOpen(!root.classList.contains('nav-open')));
+    nav.addEventListener('click', (e) => { if (e.target.closest('a')) setOpen(false); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && root.classList.contains('nav-open')) setOpen(false, true);
+      // Tab-Fokus im offenen Menü halten (Menü + Schließen-Button)
+      if (e.key === 'Tab' && root.classList.contains('nav-open') && mq.matches) {
+        const items = [toggle, ...nav.querySelectorAll('a')];
+        const i = items.indexOf(document.activeElement);
+        if (e.shiftKey && i <= 0) { e.preventDefault(); items[items.length - 1].focus(); }
+        else if (!e.shiftKey && i === items.length - 1) { e.preventDefault(); items[0].focus(); }
+      }
     });
-    document.querySelectorAll('.nav-list a').forEach((a) => a.addEventListener('click', close));
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
-    window.matchMedia('(min-width: 960px)').addEventListener('change', close);
+    mq.addEventListener('change', (e) => { if (!e.matches) setOpen(false); });
   }
 
   // Folie aufziehen: Bilder werden beim Einscrollen diagonal freigelegt
