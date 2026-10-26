@@ -37,3 +37,6 @@ Eine Signatur: „Folie aufziehen“. Bilder mit `data-wipe` werden beim Einscro
 ## Komponenten
 Header (fix, dunkel), Hero (Text links, Fahrzeug rechts randabfallend), Bento-Leistungen (6 Kacheln + Chips), Projekt-Schiene (Scroll-Snap + Pfeile), Vorteile (Liste mit Icons, sticky Überschrift), Ablauf (4 Stationen auf Linie), Über-uns-Split, Bewertungs-Slot, Kontaktblock, Footer.
 Icons: Phosphor Regular als Sprite (assets/img/icons.svg).
+
+## Unterseiten
+Page-Hero (Titel links, Bild rechts mit Diagonalschnitt, kein Vollbild), Sprungleiste (sticky unter dem Header), Gruppen mit `group-head` (H2 + Intro gestapelt), `feature`-Karten mit Bild und Tags, `mini`-Einträge (Text mit türkisem Schnittmarker) für Leistungen ohne Foto, `design-bento` mit einer türkisen Text-Kachel. Aktiver Menüpunkt: türkise Unterkante.
