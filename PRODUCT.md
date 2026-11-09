@@ -27,6 +27,7 @@ Alles aus einer Hand: Beratung, Gestaltung, Produktion und Montage im eigenen Be
 Leistungen (Briefing): Fahrzeugfolierung (Teil/Voll), Fahrzeugbeschriftung, Werbeschilder, Leuchtwerbung, 3D-Buchstaben, Fräsbuchstaben, Aufkleber, Banner, Objektbeschriftung, Visitenkarten, Textilveredelung, Logoerstellung, Design & Gestaltung. Im Figma-Entwurf zusätzlich: Möbelfolierung.
 Seiten: Startseite, Leistungen, Über uns, Kontakt (+ Impressum, Datenschutz).
 Kontaktformular-Felder: Vor- & Nachname, Firma (optional), E-Mail, Telefon, Art der Anfrage (Werbetechnik / Fahrzeugfolierung / Fahrzeugbeschriftung / Design), Nachricht.
+Inhaber: Mike Steffens.
 Kontakt: 02473/5849200, kontakt@ms-folientechnik.com, Matthias-Zimmermann-Straße 7, 52152 Simmerath. Öffnungszeiten: Mo–Fr 8:00–17:00, Samstag nach Vereinbarung. Social: https://www.instagram.com/msfolientechnik/ , https://www.facebook.com/MSFolientechnik/
 
 ## Brand Commitments
