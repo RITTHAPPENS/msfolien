@@ -744,7 +744,13 @@ p { text-wrap: pretty; }
 }
 
 /* ===== Über uns ===== */
-.page-hero-media-top img { object-position: 50% 28%; }
+/* Über uns: Hochformat-Foto mit Schild und Fahrzeug, daher quadratischer Rahmen statt 16:10 */
+.page-hero-grid-about { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+.page-hero-media-top img { aspect-ratio: 1; object-position: 50% 8%; }
+@media (max-width: 959px) {
+  .page-hero-grid-about { grid-template-columns: 1fr; }
+  .page-hero-media-top img { aspect-ratio: 4 / 3.4; object-position: 50% 20%; }
+}
 .story-grid {
   display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 32px 64px;
 }
