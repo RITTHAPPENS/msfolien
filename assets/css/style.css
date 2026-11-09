@@ -315,7 +315,6 @@ p { text-wrap: pretty; }
 .tile-xl .tile-body h3 { font-size: 1.6rem; }
 .tile-wide { grid-column: 7 / span 6; }
 .tile-wide .tile-media { aspect-ratio: 16 / 8; }
-.tile-wide:nth-child(2) .tile-media img { object-position: 50% 60%; }
 .tile-wide:nth-child(3) .tile-media img { object-position: 50% 70%; }
 .tile-mid { grid-column: span 5; }
 .tile-narrow { grid-column: span 3; }
