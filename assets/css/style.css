@@ -781,7 +781,11 @@ p { text-wrap: pretty; }
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   grid-template-rows: 1fr 1fr;
 }
-.workshop-grid .ph-wide { grid-row: span 2; aspect-ratio: auto; min-height: 460px; }
+.workshop-grid .ph-wide, .workshop-grid .ws-wide { grid-row: span 2; aspect-ratio: auto; min-height: 460px; }
+.ws-media { position: relative; overflow: hidden; background: var(--bg-3); aspect-ratio: 1; }
+.ws-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ws-wide img { object-position: 60% 50%; }
+.workshop-grid .ws-media:not(.ws-wide) img { object-position: 55% 40%; }
 
 /* Bildplatzhalter (vor Livegang durch echte Fotos ersetzen) */
 .ph {
@@ -871,7 +875,7 @@ p { text-wrap: pretty; }
   .story-grid, .aims-grid, .team-grid, .contact-page-grid { grid-template-columns: 1fr; }
   .contact-aside { order: -1; }
   .workshop-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-  .workshop-grid .ph-wide { grid-column: 1 / -1; grid-row: auto; min-height: 0; aspect-ratio: 16 / 10; }
+  .workshop-grid .ph-wide, .workshop-grid .ws-wide { grid-column: 1 / -1; grid-row: auto; min-height: 0; aspect-ratio: 16 / 10; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 639px) {
